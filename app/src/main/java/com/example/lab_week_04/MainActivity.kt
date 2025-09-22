@@ -21,8 +21,6 @@ class MainActivity : AppCompatActivity() {
                     as NavHostFragment
         val navController = navHostFragment.navController
 
-        // Creating top level destinations
-        // Make sure these fragment IDs exist in your navigation graph
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.listFragment, R.id.favoriteFragment, R.id.cafeFragment
@@ -31,11 +29,9 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        // Setup NavigationView (drawer)
         findViewById<NavigationView>(R.id.nav_view)
             ?.setupWithNavController(navController)
 
-        // Setup BottomNavigationView
         findViewById<BottomNavigationView>(R.id.bottom_nav)
             ?.setupWithNavController(navController)
     }
